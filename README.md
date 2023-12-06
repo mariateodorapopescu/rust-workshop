@@ -1,19 +1,31 @@
-# rust-workshop
-A small collection of basic exercises in rust from when I participles at the first rust workshop from NXPxUPB from nov 2022
+# Rust Workshop Learnings
 
-*Some little things about the language*
+Welcome to the **rust-workshop** repository, where I've compiled a collection of basic exercises and learnings from my participation in the first Rust workshop conducted by NXPxUPB in November 2022.
 
-We can define functions to have parameters, which are special variables that are part of a function’s signature. When a function has parameters, you can provide it with concrete values for those parameters. Technically, the concrete values are called arguments, but in casual conversation, people tend to use the words parameter and argument interchangeably for either the variables in a function’s definition or the concrete values passed in when you call a function.
-The main error message, “mismatched types,” reveals the core issue with this code. The definition of the function plus_one says that it will return an i32, but statements don’t evaluate to a value, which is expressed by (), the unit type. Therefore, nothing is returned, which contradicts the function definition and results in an error. In this output, Rust provides a message to possibly help rectify this issue: it suggests removing the semicolon, which would fix the error.
-Let’s walk through an example with the match expression we use here. Say that the user has guessed 50 and the randomly generated secret number this time is 38. When the code compares 50 to 38, the cmp method will return Ordering::Greater, because 50 is greater than 38. The match expression gets the Ordering::Greater value and starts checking each arm’s pattern. It looks at the first arm’s pattern, Ordering::Less, and sees that the value Ordering::Greater does not match Ordering::Less, so it ignores the code in that arm and moves to the next arm. The next arm’s pattern is Ordering::Greater, which does match Ordering::Greater! The associated code in that arm will execute and print Too big! to the screen. The match expression ends after the first successful match, so it won’t look at the last arm in this scenario.
-We switch from an expect call to a match expression to move from crashing on an error to handling the error. Remember that parse returns a Result type and Result is an enum that has the variants Ok and Err. We’re using a match expression here, as we did with the Ordering result of the cmp method.
-If parse is able to successfully turn the string into a number, it will return an Ok value that contains the resulting number. That Ok value will match the first arm’s pattern, and the match expression will just return the num value that parse produced and put inside the Ok value. That number will end up right where we want it in the new guess variable we’re creating.
-In other words, the struct definition is like a general template for the type, and instances fill in that template with particular data to create values of the type.
-Tuple structs are useful when you want to give the whole tuple a name and make the tuple a different type from other tuples, and when naming each field as in a regular struct would be verbose or redundant.
-Each struct you define is its own type, even though the fields within the struct might have the same types.
-Otherwise, tuple struct instances are similar to tuples in that you can destructure them into their individual pieces, and you can use a . followed by the index to access an individual value.
-We use structs to add meaning by labeling the data. We can transform the tuple we’re using into a struct with a name for the whole as well as names for the parts
+## Overview
 
-An if expression allows you to branch your code depending on conditions. You provide a condition and then state, “If this condition is met, run this block of code. If the condition is not met, do not run this block of code.”Optionally, we can also include an else expression, which we chose to do here, to give the program an alternative block of code to execute should the condition evaluate to false. If you don’t provide an else expression and the condition is false, the program will just skip the if block and move on to the next bit of code. We place the block of code to execute if the condition is true immediately after the condition inside curly brackets. Blocks of code associated with the conditions in if expressions are sometimes called arms, just like the arms in match expressions. 
-It’s also worth noting that the condition in this code must be a bool. If the condition isn’t a bool, we’ll get an error.
-That’s because Rust only executes the block for the first true condition, and once it finds one, it doesn’t even check the rest.
+Rust is a powerful and expressive language, and through this workshop, I delved into various aspects of the language. Here are some key takeaways and snippets of wisdom:
+
+### Functions and Parameters
+
+Rust allows us to define functions with parameters, special variables that form a function's signature. These parameters are replaced by concrete values called arguments when you invoke the function. Understanding this interplay is crucial for effective Rust programming.
+
+### Error Handling
+
+The main error message, "mismatched types," highlights a common issue: returning a value from a function that expects a different type. Rust suggests removing semicolons, transforming statements into expressions, to resolve this mismatch.
+
+### Match Expressions
+
+The `match` expression is a powerful construct in Rust. For instance, in a guessing game scenario, it efficiently handles the comparison of user guesses with a randomly generated secret number, providing clarity in code organization.
+
+### Structs
+
+Structs in Rust serve as templates for creating instances with specific data. Whether defining a general template or a tuple struct, structs enhance code readability by labeling and organizing data.
+
+### If Expressions
+
+The `if` expression facilitates conditional branching in Rust. The condition must evaluate to a boolean, and the associated block of code executes if the condition is true. Adding an optional `else` expression provides an alternative block for false conditions.
+
+## Dive Deeper
+
+Explore the individual exercises and code snippets within the repository to gain a deeper understanding of Rust. Each section provides valuable insights into different aspects of the language. Happy coding! 🦀🚀
