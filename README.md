@@ -25,7 +25,3 @@ Structs in Rust serve as templates for creating instances with specific data. Wh
 ### If Expressions
 
 The `if` expression facilitates conditional branching in Rust. The condition must evaluate to a boolean, and the associated block of code executes if the condition is true. Adding an optional `else` expression provides an alternative block for false conditions.
-
-## Dive Deeper
-
-Explore the individual exercises and code snippets within the repository to gain a deeper understanding of Rust. Each section provides valuable insights into different aspects of the language. Happy coding! 🦀🚀
